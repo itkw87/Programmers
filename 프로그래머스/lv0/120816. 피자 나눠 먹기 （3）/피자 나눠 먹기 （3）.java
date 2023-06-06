@@ -9,6 +9,7 @@ class Solution {
                 answer = n / slice + 1;
             }
             if(n / slice == 0){
+                System.out.println("나머지" + n % slice);
                 answer = 1;
             }
         }
