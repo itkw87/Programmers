@@ -5,7 +5,7 @@ class Solution {
         int[] answer = new int[num_list.length - 5];
          
         int temp = 0;
-        for(int j = 0; j < num_list.length; j++) {
+        for(int j = 1; j < num_list.length; j++) {
             for(int i = 0; i < num_list.length - 1; i++) {
             temp = num_list[i];
                 if(num_list[i] > num_list[i + 1]) {
