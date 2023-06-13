@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution {
     public String[] solution(String my_string) {
         String[] answer = {};
@@ -13,11 +11,8 @@ class Solution {
             }
         }
         
-        System.out.println(newStr);
         answer = newStr.split(" ");
     
-
-        
         return answer;
     }
 }
