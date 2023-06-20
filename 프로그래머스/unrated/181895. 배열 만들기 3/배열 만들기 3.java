@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution {
     public int[] solution(int[] arr, int[][] intervals) {
         int[] answer = new int[(intervals[0][1] - intervals[0][0]) + (intervals[1][1] - intervals[1][0]) + 2];
@@ -11,7 +9,6 @@ class Solution {
                 j++;
             }
         }
-
         return answer;
     }
 }
