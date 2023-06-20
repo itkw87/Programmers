@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution {
     public int[][] solution(int n) {
         int[][] answer = new int[n][n];
