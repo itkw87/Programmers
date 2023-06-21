@@ -1,7 +1,6 @@
 class Solution {
     public int solution(int[] num_list) {
-        int answer = 0;
-        
+        int answer = 0;      
         int num = 0;
         for(int i = 0; i < num_list.length; i++) {
             num = num_list[i];
@@ -15,10 +14,6 @@ class Solution {
                 }    
             }
         }
-        
-        System.out.println(answer);
-
-        
         return answer;
     }
 }
