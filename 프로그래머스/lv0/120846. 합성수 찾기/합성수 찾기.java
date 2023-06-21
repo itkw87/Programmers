@@ -1,7 +1,7 @@
 class Solution {
     public int solution(int n) {
-        int answer = 0;
         int sumNum = 0;
+        
         int cnt = 0;
         for(int i = 1; i <= n; i++) {
             cnt = 0;
@@ -10,16 +10,9 @@ class Solution {
                    cnt++;
                } 
             }
-            if(cnt >= 3) {
+            if(cnt >= 3) 
                 sumNum++;
-                System.out.println("합성수: " + i);
-            }
         }
-        
-        System.out.println(cnt);
-        System.out.println(sumNum);
-        answer = sumNum;
-        
-        return answer;
+        return sumNum;
     }
 }
