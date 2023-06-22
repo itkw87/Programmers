@@ -8,16 +8,11 @@ class Solution {
             } else {
                  if(id_pw[0].equals(db[i][0]) && !id_pw[1].equals(db[i][1])) {
                     return "wrong pw";
-                } 
-                
-                if(!id_pw[0].equals(db[i][0])) {
+                } if(!id_pw[0].equals(db[i][0])) {
                     answer = "fail";
-                }
-               
+                }   
             }
-            System.out.println(answer);
         }
-
         return answer;
     }
 }
