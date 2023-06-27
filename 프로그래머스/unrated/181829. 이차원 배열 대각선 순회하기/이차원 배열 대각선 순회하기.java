@@ -8,7 +8,6 @@ class Solution {
                 }
             }
         }
-        System.out.println(answer);
         return answer;
     }
 }
