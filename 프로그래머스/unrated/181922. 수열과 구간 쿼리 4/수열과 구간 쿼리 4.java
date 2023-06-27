@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution {
     public int[] solution(int[] arr, int[][] queries) {
         int[] answer = {};
@@ -11,8 +9,6 @@ class Solution {
                 }
             } 
         }
-        System.out.println(Arrays.toString(arr));
-        
         return arr;
     }
 }
