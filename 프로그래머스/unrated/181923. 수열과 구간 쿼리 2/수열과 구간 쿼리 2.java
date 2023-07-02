@@ -8,7 +8,6 @@ class Solution {
                 if(arr[j] > queries[i][2] &&  min > arr[j]) {
                     min = arr[j];
                 } 
-                
             }
             answer[i] = min != 1000000 ? min : -1;          
         }
