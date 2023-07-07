@@ -1,12 +1,7 @@
-import java.util.Arrays;
 class Solution {
     public String solution(String polynomial) {
-        String answer = "";
         int xNum = 0;
         int num = 0;
-        String xNumStr = "";
-        String numStr = "";
-        String operator = "";
         if(polynomial.contains("+")) {
             String[] strArr = polynomial.replace(" + ", "/").split("/");
             for(int i = 0; i < strArr.length; i++) {
@@ -20,13 +15,9 @@ class Solution {
                     num += Integer.parseInt(strArr[i]);
                 }
             }
-            xNumStr = xNum >= 2 ? xNum + "x" : xNum >= 1 ? "x" : ""; 
-            numStr = num >= 1 ? num + "" : "";
-            operator = !"".equals(xNumStr) && !"".equals(numStr) ? " + " : "";
-            answer = xNumStr + operator + numStr;
+            return (xNum >= 2 ? xNum + "x" : xNum >= 1 ? "x" : "") + (xNum != 0 && num != 0 ? " + " : "") + (num >= 1 ? num + "" : "");
         } else {
-            answer = polynomial;
+            return polynomial;
         }
-        return answer;
     }
 }
