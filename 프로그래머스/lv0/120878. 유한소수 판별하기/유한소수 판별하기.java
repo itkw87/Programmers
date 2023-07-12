@@ -13,7 +13,6 @@ class Solution {
             flag = true;
             if(b % i == 0) {
                 for(int j = 2; j < i; j++) {
-                    System.out.println("i와 j:" + i + " " + j);
                     if(i % j == 0) { 
                         flag = false; 
                         break;
