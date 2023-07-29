@@ -7,7 +7,6 @@ class Solution {
         final String MINUS = " - ";
         String[] equalsOpArr = {};
         String[] operatorArr = {};   
-        int answerNum = 0;
         for(int i = 0; i < quiz.length; i++) {
             equalsOpArr = quiz[i].split(" = ");         
             operator = equalsOpArr[0].contains(" + ") ? PLUS : equalsOpArr[0].contains(" - ") ? MINUS : "";
@@ -18,7 +17,6 @@ class Solution {
                     break;
                 case MINUS:
                     answer[i] = (Integer.parseInt(operatorArr[0]) - Integer.parseInt(operatorArr[1])) == Integer.parseInt(equalsOpArr[1]) ? "O" : "X";
-                    break;
             }         
         }     
         return answer;
