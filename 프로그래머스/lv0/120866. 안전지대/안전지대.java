@@ -8,31 +8,22 @@ class Solution {
                 if(board[i][j] == 1) {
                     mineCnt++;
                     warnningZone[i][j] = 4;
-                        if(j > 0) {
-                            warnningZone[i][j - 1] = 4;    
-                        }
-                        if(j < board.length - 1) {
-                            warnningZone[i][j + 1] = 4;    
-                        }
-                        if(i > 0) {
-                            warnningZone[i - 1][j] = 4;    
-                        }
-                        if(i > 0 && j > 0) {
-                            warnningZone[i - 1][j - 1] = 4;    
-                        }
-                        if(i > 0 && j < board.length - 1) {
-                            warnningZone[i - 1][j + 1] = 4;    
-                        }
-                        
-                        if(i < board.length - 1) {
-                            warnningZone[i + 1][j] = 4;    
-                        }
-                        if(i < board.length - 1 && j > 0) {
-                            warnningZone[i + 1][j - 1] = 4;    
-                        }
-                        if(i < board.length - 1 && j < board.length - 1) {
-                            warnningZone[i + 1][j + 1] = 4;    
-                        }                    
+                    if(j > 0) 
+                        warnningZone[i][j - 1] = 4;    
+                    if(j < board.length - 1) 
+                        warnningZone[i][j + 1] = 4;    
+                    if(i > 0) 
+                        warnningZone[i - 1][j] = 4;    
+                    if(i > 0 && j > 0) 
+                        warnningZone[i - 1][j - 1] = 4;    
+                    if(i > 0 && j < board.length - 1) 
+                        warnningZone[i - 1][j + 1] = 4;    
+                    if(i < board.length - 1) 
+                        warnningZone[i + 1][j] = 4;    
+                    if(i < board.length - 1 && j > 0) 
+                        warnningZone[i + 1][j - 1] = 4;    
+                    if(i < board.length - 1 && j < board.length - 1) 
+                        warnningZone[i + 1][j + 1] = 4;    
                 }
             }
         }
