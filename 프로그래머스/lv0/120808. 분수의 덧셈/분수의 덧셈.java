@@ -21,10 +21,11 @@ class Solution {
             numer1 = numer1 * (sumDenom / denom1);
             numer2 = numer2 * (sumDenom / denom2);
             sumNumer = numer1 + numer2;
-            for(int i = 2; i <= Math.min(sumNumer, sumDenom); i++) {
+            loop:for(int i = Math.min(sumNumer, sumDenom); i >= 2 ; i--) {
                 if(sumNumer % i == 0 && sumDenom % i == 0) {
                     sumNumer /= i ;
                     sumDenom /= i ;
+                    break loop;
                 }
             }
             answer[0] = sumNumer;
