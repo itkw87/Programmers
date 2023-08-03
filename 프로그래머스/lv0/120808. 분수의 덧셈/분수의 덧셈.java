@@ -3,7 +3,6 @@ class Solution {
         int[] answer = new int[2];
         int sumNumer = 0;
         int sumDenom = 0;
-        int commonNum = 0; 
         if(denom1 == denom2) {  
             sumNumer = numer1 + numer2;
             sumDenom = denom1;
