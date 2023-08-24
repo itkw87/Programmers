@@ -1,15 +1,14 @@
 class Solution {
     public int solution(int num) {
+         if(num == 1) 
+            return 0;
+        long realNum = num;
         int i = 0;
-        while(i < 500) {
-            num = (num % 2) == 0 ? num / 2 : (num * 3) + 1;    
-            i++;
-            if(1 == num) {
+        while(i++ < 500 && realNum > 1) {
+            realNum = (realNum % 2) == 0 ? realNum / 2 : (realNum * 3) + 1;    
+            if(1 == realNum) 
                 break;
-            }
         }
-        System.out.println(num);
-        System.out.println(i);
-        return num == 1 ? i : -1;
+        return realNum == 1 ? i : -1;
     }
 }
