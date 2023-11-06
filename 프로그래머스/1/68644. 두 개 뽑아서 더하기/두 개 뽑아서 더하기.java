@@ -1,6 +1,7 @@
 import java.util.*;
 class Solution {
-    public Integer[] solution(int[] numbers) {
+    public int[] solution(int[] numbers) {
+        int[] answer;
         Set<Integer> sumSet = new HashSet<>();
         for (int i = 0; i < numbers.length; i++) {
             for (int j = 0; j < numbers.length; j++) {
@@ -9,7 +10,11 @@ class Solution {
                 }
             }
         }
-        Integer[] answer = sumSet.toArray(new Integer[sumSet.size()]);
+        answer = new int[sumSet.size()];
+        int index = 0;
+        for (int sum : sumSet) {
+            answer[index++] = sum;
+        }
         Arrays.sort(answer);
         return answer;
     }
