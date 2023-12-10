@@ -7,13 +7,9 @@ class Solution {
             for (int[] boa : board) {
                 int currColPick = boa[moves[i] - 1];
                 if (currColPick != 0) {
-                      if (dollStack.size() > 0) {
-                          if (dollStack.peek() == currColPick) {
+                      if (dollStack.size() > 0 && dollStack.peek() == currColPick) {
                               dollStack.pop();
                               answer += 2;
-                          } else {
-                              dollStack.push(currColPick);
-                          }
                       } else {
                           dollStack.push(currColPick);
                       }
@@ -24,6 +20,4 @@ class Solution {
         }
         return answer;
     }
-    
-   
 }
