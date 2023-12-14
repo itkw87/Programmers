@@ -4,11 +4,7 @@ class Solution {
     private static final int W = 1;
     public int[] solution(String[] park, String[] routes) {
         int[] answer = {};
-        Integer[] north = {-1, 0};
-        Integer[] south = {1, 0};
-        Integer[] west = {0, -1};
-        Integer[] east = {0, 1};
-        Map<String, Integer[]> dirMap = Map.of("N", north, "S", south, "W", west, "E", east); 
+        Map<String, Integer[]> dirMap = Map.of("N", new Integer[] {-1, 0}, "S", new Integer[] {1, 0}, "W", new Integer[] {0, -1}, "E", new Integer[] {0, 1}); 
         for (int i = 0; i < park.length; i++) {
             int startIndex = park[i].indexOf("S");
             if (startIndex != -1) {
@@ -39,8 +35,9 @@ class Solution {
     }
      private boolean isVertical(String direction) {
             if ("N".equals(direction) || "S".equals(direction)) {
-                return true;
-            } 
+                 return true;
+            }
             return false;
+               
     }
 }
