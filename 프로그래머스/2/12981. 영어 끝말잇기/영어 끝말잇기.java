@@ -1,13 +1,8 @@
 import java.util.*;
-
 class Solution {
-    // 끝말잇기 조건
-    // 1. 앞사람이 말한 단어의 마지막 문자로 시작하는 단어를 말해야함
-    // 2. 이전에 등장한 단어는 사용불가
-    
     public int[] solution(int n, String[] words) {
         int[] answer = new int[2];
-        Map<String, Integer> wordsMap = new LinkedHashMap<>();
+        Map<String, Integer> wordsMap = new HashMap<>();
         int turnCnt = 1;
         int currentPlayer = 1;
         char prevLastChar = words[0].charAt(0);
