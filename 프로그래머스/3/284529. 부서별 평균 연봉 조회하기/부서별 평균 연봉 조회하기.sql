@@ -1,4 +1,4 @@
-SELECT A.DEPT_ID            AS DEPT_ID
+    SELECT A.DEPT_ID            AS DEPT_ID
          , A.DEPT_NAME_EN       AS DEPT_NAME_EN
          , ROUND(AVG(B.SAL), 0) AS AVG_SAL
       FROM HR_DEPARTMENT A
