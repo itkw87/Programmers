@@ -1,0 +1,12 @@
+      SELECT A.ITEM_ID
+           , A.ITEM_NAME
+           , A.RARITY
+        FROM ITEM_INFO A
+       WHERE NOT EXISTS (
+                          SELECT 1
+                            FROM ITEM_TREE  AA
+                           WHERE AA.PARENT_ITEM_ID = A.ITEM_ID
+                        )
+    ORDER BY A.ITEM_ID DESC;
+
+         
