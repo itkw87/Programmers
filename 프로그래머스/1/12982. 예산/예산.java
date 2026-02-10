@@ -2,20 +2,16 @@ import java.util.Arrays;
 
 class Solution { 
     public int solution(int[] d, int budget) {
-        // 오름차순 정렬
-        Arrays.sort(d);
-        
         int cnt = 0;
-        int newBudget = budget;
-        boolean isFlow = false;
+        
+        Arrays.sort(d);
+
         for (int i = 0; i < d.length; i++) {
-            newBudget -= d[i];
-            if (newBudget < 0) {
-                isFlow = true;
-                cnt = i;
-                break;
-            }
+            budget -= d[i];
+            if (budget < 0) break;
+            
+            cnt++;
         }    
-        return isFlow ? cnt : d.length;
+        return cnt;
     }
 }
