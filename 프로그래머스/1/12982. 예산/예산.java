@@ -1,15 +1,21 @@
-import java.util.*;
-class Solution {
+import java.util.Arrays;
+
+class Solution { 
     public int solution(int[] d, int budget) {
-        int answer = 0;
+        // 오름차순 정렬
         Arrays.sort(d);
+        
+        int cnt = 0;
+        int newBudget = budget;
+        boolean isFlow = false;
         for (int i = 0; i < d.length; i++) {
-            if (budget - d[i] < 0) {
+            newBudget -= d[i];
+            if (newBudget < 0) {
+                isFlow = true;
+                cnt = i;
                 break;
             }
-            budget -= d[i];
-            answer++;
-        }
-        return answer;
+        }    
+        return isFlow ? cnt : d.length;
     }
 }
