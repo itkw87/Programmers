@@ -2,22 +2,22 @@ class Solution {
     public int solution(int[] wallet, int[] bill) {
         int answer = 0;
         
-        int wletMaxNum = Math.max(wallet[0], wallet[1]);
-        int wletMinNum = Math.min(wallet[0], wallet[1]);
-        int billMaxNum = Math.max(bill[0], bill[1]);
-        int billMinNum = Math.min(bill[0], bill[1]);
-        while (wletMinNum < billMinNum || wletMaxNum < billMaxNum) {
+        while (min(wallet) < min(bill) || max(wallet) < max(bill)) {
             if (bill[0] > bill[1]) {
                 bill[0] /= 2;
             } else {
                 bill[1] /= 2;
             }
-            wletMaxNum = Math.max(wallet[0], wallet[1]);
-            wletMinNum = Math.min(wallet[0], wallet[1]);
-            billMaxNum = Math.max(bill[0], bill[1]);
-            billMinNum = Math.min(bill[0], bill[1]);
             answer++;
         }
         return answer;
+    }
+    
+    private int max(int[] numArr) {
+        return Math.max(numArr[0], numArr[1]);
+    }
+    
+    private int min(int[] numArr) {
+        return Math.min(numArr[0], numArr[1]);
     }
 }
