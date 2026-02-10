@@ -1,14 +1,10 @@
 class Solution {
     public int solution(int n) {
-        int sum = 0;
-        String str = "";
-        while (n > 0) {
-            str += n % 3;
-            n = n / 3;
-        }
-        for (int i = 0; i < str.length(); i++) {
-            sum += Character.getNumericValue(str.charAt(i)) * (int)Math.pow(3, (str.length() - 1) - i);
-        }
-        return sum;
+        int base3 = 3;
+        Integer.toString(n, base3);
+        String trnsBase3 = Integer.toString(n, base3);
+        String trnsBase3Rvrs = new StringBuilder(trnsBase3).reverse().toString();
+        
+        return Integer.parseInt(trnsBase3Rvrs, base3);
     }
 }
