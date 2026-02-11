@@ -3,11 +3,18 @@ import java.util.*;
 class Solution {
     public boolean solution(String[] phone_book) {
         boolean isHasNotPrefix = true;
-        Arrays.sort(phone_book);
-        for (int i = 0; i < phone_book.length; i++) {
-            int nextIdx = i + 1;
-            if (nextIdx < phone_book.length && phone_book[nextIdx].startsWith(phone_book[i])) {
-                isHasNotPrefix = false;
+        Map<String, Integer> map = new HashMap<>();
+        
+        for (String phoneNum : phone_book) {
+            map.put(phoneNum, 1);
+        }
+        for (String phoneNum: phone_book) {
+            String tmpPhoneNum = "";
+            for (int j = 0; j < phoneNum.length(); j++) {
+                tmpPhoneNum += phoneNum.charAt(j);
+                if (j < phoneNum.length() - 1 && map.getOrDefault(tmpPhoneNum, -1) == 1) {
+                    isHasNotPrefix = false;
+                }
             }
         }
         return isHasNotPrefix;
