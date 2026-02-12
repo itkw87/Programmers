@@ -2,22 +2,14 @@ import java.util.*;
 
 public class Solution {
     public int[] solution(int []arr) {
-        Queue<Integer> queue = new LinkedList<>();
+        Stack<Integer> stack = new Stack<>();
         
-        int preNum = -1;
-        for (int i = 0; i < arr.length; i++) {
-            if (preNum != arr[i]) {
-                queue.offer(arr[i]);    
-                preNum = arr[i];
+        for (int num : arr) {
+            if (stack.isEmpty() || stack.peek() != num) {
+                stack.push(num);       
             }
         }
         
-        int idx = 0;
-        int[] answer = new int[queue.size()];
-        while (!queue.isEmpty()) {
-            answer[idx++] = queue.poll();   
-        }
-
-        return answer;
+        return stack.stream().mapToInt(i -> i).toArray();
     }
 }
