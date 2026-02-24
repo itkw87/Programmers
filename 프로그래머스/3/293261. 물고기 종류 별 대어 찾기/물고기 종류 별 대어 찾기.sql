@@ -1,17 +1,15 @@
-    SELECT A.ID
-         , B.FISH_NAME
-         , A.LENGTH
+    SELECT B.ID
+         , C.FISH_NAME
+         , B.LENGTH
       FROM (
-            SELECT ID
-                 , FISH_TYPE
-                 , LENGTH
-                 , RANK() OVER (PARTITION BY FISH_TYPE ORDER BY LENGTH DESC) AS RANK_NUM
+            SELECT FISH_TYPE
+                 , MAX(LENGTH) AS MAX_LEN
               FROM FISH_INFO
+          GROUP BY FISH_TYPE
            ) A
-INNER JOIN FISH_NAME_INFO B
+INNER JOIN FISH_INFO B
         ON A.FISH_TYPE = B.FISH_TYPE
-     WHERE A.RANK_NUM = 1
-  ORDER BY A.ID
-
-       
-      
+       AND A.MAX_LEN   = B.LENGTH
+INNER JOIN FISH_NAME_INFO C
+        ON B.FISH_TYPE = C.FISH_TYPE
+  ORDER BY B.ID
